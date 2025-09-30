@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKD Trung Auto  - Những chiếc xe mơ ước</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">NKD Trung Auto</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Trang chủ</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">Loại xe <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#toyota">Toyota</a>
+                        <a href="#mercedes">Mercedes</a>
+                        <a href="#bmw">BMW</a>
+                        <a href="#audi">Audi</a>
+                        <a href="#lexus">Lexus</a>
+                        <a href="#honda">Honda</a>
+                        <a href="#hyundai">Hyundai</a>
+                        <a href="#kia">KIA</a>
+                        <a href="#vinfast">Vinfast</a>
+                    </div>
+                </div>
+                <a href="#about">Giới thiệu</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-text">Xem giỏ hàng</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="login-options">
+                    <a href="login.html" class="blob-btn login-btn">
+                        <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                            </span>
+                        </span>
+                        Đăng nhập Khách hàng
+                    </a>
+                    <a href="admin-login.html" class="blob-btn admin-login-btn">
+                        <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                            </span>
+                        </span>
+                        Đăng nhập Admin
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>NKD Trung Auto</h1>
+                <p>Chiếc xe mơ ước của bạn ở đây</p>
+            </div>
+        </section>
+
+        <section id="products" class="brands-section">
+            <div class="section-title">
+                <h2>Các dòng xe nổi bật</h2>
+            </div>
+            <!-- Toyota Section -->
+            <div id="toyota" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-toyota.png" alt="Toyota Logo" class="brand-logo">
+                        <h2>TOYOTA</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/toyota-camry.jpg" alt="Toyota Camry">
+                            <h3>Toyota Camry</h3>
+                            <p class="price">1.235.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Camry', 1235000000, 'assets/images/toyota-camry.jpg')" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-vios.jpg" alt="Toyota Vios">
+                            <h3>Toyota Vios</h3>
+                            <p class="price">592.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Vios G', 592000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-fortuner.jpg" alt="Toyota Fortuner">
+                            <h3>Toyota Fortuner</h3>
+                            <p class="price">1.350.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Fortuner', 1350000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-cross.jpg" alt="Toyota Cross">
+                            <h3>Toyota Cross</h3>
+                            <p class="price">820.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Cross', 820000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-innova.jpg" alt="Toyota Innova">
+                            <h3>Toyota Innova</h3>
+                            <p class="price">755.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Innova', 755000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-yaris.jpg" alt="Toyota Yaris">
+                            <h3>Toyota Yaris</h3>
+                            <p class="price">684.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Yaris', 684000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-corolla.jpg" alt="Toyota Corolla">
+                            <h3>Toyota Corolla</h3>
+                            <p class="price">800.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Corolla', 800000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-raize.jpg" alt="Toyota Raize">
+                            <h3>Toyota Raize</h3>
+                            <p class="price">510.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Raize', 510000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-alphard.jpg" alt="Toyota Alphard">
+                            <h3>Toyota Alphard</h3>
+                            <p class="price">4.370.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Alphard', 4370000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/toyota-hilux.jpg" alt="Toyota Hilux">
+                            <h3>Toyota Hilux</h3>
+                            <p class="price">706.000.000 VNĐ</p>
+                            <button onclick="addToCart('Toyota Hilux', 706000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Mercedes Section -->
+            <div id="mercedes" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-mercedes.png" alt="Mercedes Logo" class="brand-logo">
+                        <h2>MERCEDES</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-c200.jpg" alt="Mercedes C200">
+                            <h3>Mercedes C200</h3>
+                            <p class="price">1.669.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes C200', 1669000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-e200.jpg" alt="Mercedes E200">
+                            <h3>Mercedes E200</h3>
+                            <p class="price">2.310.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes E200', 2310000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-glc200.jpg" alt="Mercedes GLC200">
+                            <h3>Mercedes GLC200</h3>
+                            <p class="price">1.859.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes GLC200', 1859000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-glc300.jpg" alt="Mercedes GLC300">
+                            <h3>Maybach GLC300</h3>
+                            <p class="price">2.639.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach GLC 300', 2639000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-gle450.jpg" alt="Mercedes GLE450">
+                            <h3>Maybach GLE450</h3>
+                            <p class="price">4.409.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach GLE450', 4409000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-maybach-GLS600.jpg" alt="Mercedes Maybach GLS600">
+                            <h3>Maybach GLS600</h3>
+                            <p class="price">12.119.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach GLS600', 12119000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-maybach-S450.jpg" alt="Mercedes Maybach S450">
+                            <h3>Maybach S450</h3>
+                            <p class="price">4.969.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach S450', 4969000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-maybach-S480.jpg" alt="Mercedes Maybach S480">
+                            <h3>Maybach S480</h3>
+                            <p class="price">8.799.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach S480', 8799000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-maybach-S650.jpg" alt="Mercedes Maybach S650">
+                            <h3>Maybach S650</h3>
+                            <p class="price">14.899.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach S650', 14899000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/mercedes-maybach-S680.jpg" alt="Mercedes Maybach S680">
+                            <h3>Maybach S680</h3>
+                            <p class="price">16.890.000.000 VNĐ</p>
+                            <button onclick="addToCart('Mercedes Maybach S680', 16890000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- BMW Section -->
+            <div id="bmw" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-bmw.png" alt="BMW Logo" class="brand-logo">
+                        <h2>BMW</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/bmw-320i.jpg" alt="BMW 320i">
+                            <h3>BMW 320i</h3>
+                            <p class="price">1.399.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 320i', 1390000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-330i.jpg" alt="BMW 330i">
+                            <h3>BMW 330i</h3>
+                            <p class="price">1.719.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 330i', 1719000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-430i.jpg" alt="BMW 430i">
+                            <h3>BMW 430i</h3>
+                            <p class="price">3.399.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 430i', 3399000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-520i.jpg" alt="BMW 520i">
+                            <h3>BMW 520i</h3>
+                            <p class="price">1.979.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 520i', 1979000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-530i.jpg" alt="BMW 530i">
+                            <h3>BMW 530i</h3>
+                            <p class="price">2.499.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 530i', 2499000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-730li.jpg" alt="BMW 730Li">
+                            <h3>BMW 730Li</h3>
+                            <p class="price">4.369.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW 730Li', 4369000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-x5.jpg" alt="BMW X5">
+                            <h3>BMW X5</h3>
+                            <p class="price">4.479.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW X5', 4479000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-x7.jpg" alt="BMW X7">
+                            <h3>BMW X7</h3>
+                            <p class="price">6.889.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW X7', 6889000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-z4.jpg" alt="BMW Z4">
+                            <h3>BMW Z4</h3>
+                            <p class="price">4.239.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW Z4', 4239000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/bmw-m8.jpg" alt="BMW M8">
+                            <h3>BMW M8</h3>
+                            <p class="price">3.660.000.000 VNĐ</p>
+                            <button onclick="addToCart('BMW M8', 3660000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- AUDI Section -->
+            <div id="audi" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-audi.png" alt="Audi Logo" class="brand-logo">
+                        <h2>AUDI</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/audi-a4.jpg" alt="Audi A4">
+                            <h3>Audi A4</h3>
+                            <p class="price">1.046.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi A4', 1046000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-a6.jpg" alt="Audi A6">
+                            <h3>Audi A6</h3>
+                            <p class="price">1.510.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi A6', 1510000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-a8.jpg" alt="Audi A8">
+                            <h3>Audi A8</h3>
+                            <p class="price">5.299.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi A8', 5299000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-q3.jpg" alt="Audi Q3">
+                            <h3>Audi Q3</h3>
+                            <p class="price">1.089.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi Q3', 1089000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-q5.jpg" alt="Audi Q5">
+                            <h3>Audi Q5</h3>
+                            <p class="price">2.039.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi Q5', 2039000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-q7.jpg" alt="Audi Q7">
+                            <h3>Audi Q7</h3>
+                            <p class="price">3.300.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi Q7', 3300000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-rs.jpg" alt="Audi RS">
+                            <h3>Audi RS</h3>
+                            <p class="price">4.750.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi RS', 4750000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div> 
+                        <div class="car-card">
+                            <img src="assets/images/audi-rs7.jpg" alt="Audi RS7">
+                            <h3>Audi RS7</h3>
+                            <p class="price">2.300.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi RS7', 2300000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>   
+                        <div class="car-card">
+                            <img src="assets/images/audi-s5.jpg" alt="Audi S5">
+                            <h3>Audi S5</h3>
+                            <p class="price">2.670.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi S5', 2670000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/audi-s8.jpg" alt="Audi S8">
+                            <h3>Audi S8</h3>
+                            <p class="price">3.100.000.000 VNĐ</p>
+                            <button onclick="addToCart('Audi S8', 3100000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- LEXUS Section -->
+            <div id="lexus" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-lexus.png" alt="Lexus Logo" class="brand-logo">
+                        <h2>LEXUS</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/lexus-es250.jpg" alt="Lexus ES250">
+                            <h3>Lexus ES250</h3>
+                            <p class="price">2.360.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus ES250', 2360000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-rx350.jpg" alt="Lexus RX350">
+                            <h3>Lexus RX350</h3>
+                            <p class="price">3.430.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus RX350',3430000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-nx350h.jpg" alt="Lexus NX350h">
+                            <h3>Lexus NX350h</h3>
+                            <p class="price">3.420.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus NX350h', 3420000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-rx500h.jpg" alt="Lexus RX500h">
+                            <h3>Lexus RX500h</h3>
+                            <p class="price">4.940.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus RX500h', 4940000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-gx550m.jpg" alt="Lexus GX550M">
+                            <h3>Lexus GX550M</h3>
+                            <p class="price">6.200.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus GX550M', 6200000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-ls500.jpg" alt="Lexus LS500">
+                            <h3>Lexus LS500</h3>
+                            <p class="price">7.650.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus LS500', 7650000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-lx600.jpg" alt="Lexus LX600">
+                            <h3>Lexus LX600</h3>
+                            <p class="price">9.000.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus LX600', 9000000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-lc500.jpg" alt="Lexus LC500">
+                            <h3>Lexus LC500</h3>
+                            <p class="price">2.500.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus LC500', 2500000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-lm500h.jpg" alt="Lexus LM500h">
+                            <h3>Lexus LM500h</h3>
+                            <p class="price">8.710.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus LM500h', 8710000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/lexus-ux.jpg" alt="Lexus UX">
+                            <h3>Lexus UX</h3>
+                            <p class="price">2.600.000.000 VNĐ</p>
+                            <button onclick="addToCart('Lexus UX', 2600000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+<!-- HONDA Section -->
+            <div id="honda" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-honda.png" alt="Honda Logo" class="brand-logo">
+                        <h2>HONDA</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/honda-city.jpg" alt="Honda City">
+                            <h3>Honda City</h3>
+                            <p class="price">568.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda City', 568000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-civic.jpg" alt="Honda Civic">
+                            <h3>Honda Civic</h3>
+                            <p class="price">889.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda Civic',889000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-crv.jpg" alt="Honda CR-V">
+                            <h3>Honda CR-V</h3>
+                            <p class="price">1.259.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda CR-V', 1259000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-brv.jpg" alt="Honda BR-V">
+                            <h3>Honda BR-V</h3>
+                            <p class="price">705.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda BR-V', 705000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-hrv.jpg" alt="Honda HR-V">
+                            <h3>Honda HR-V</h3>
+                            <p class="price">869.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda HR-V', 869000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-nsx.jpg" alt="Honda NSX">
+                            <h3>Honda NSX</h3>
+                            <p class="price">4.883.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda NSX', 4883000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-accord.jpg" alt="Honda Accord">
+                            <h3>Honda Accord</h3>
+                            <p class="price">1.319.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda Accord', 1319000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-prelude.jpg" alt="Honda Prelude">
+                            <h3>Honda Prelude</h3>
+                            <p class="price">972.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda Prelude', 972000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-freed.jpg" alt="Honda Freed">
+                            <h3>Honda Freed</h3>
+                            <p class="price">573.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda Freed', 573000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/honda-pilot.jpg" alt="Honda Pilot">
+                            <h3>Honda Pilot</h3>
+                            <p class="price">1.012.000.000 VNĐ</p>
+                            <button onclick="addToCart('Honda Pilot', 1012000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+<!-- HYUNDAI Section -->
+            <div id="hyundai" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-hyundai.png" alt="Hyundai Logo" class="brand-logo">
+                        <h2>HYUNDAI</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-elantra.jpg" alt="Hyundai Elantra">
+                            <h3>Hyundai Elantra</h3>
+                            <p class="price">769.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Elantra', 769000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-accent.jpg" alt="Hyundai Accent">
+                            <h3>Hyundai Accent</h3>
+                            <p class="price">569.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Accent',569000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-creta.jpg" alt="Huyndai Creta">
+                            <h3>Huyndai Creta</h3>
+                            <p class="price">715.000.000 VNĐ</p>
+                            <button onclick="addToCart('Huyndai Creta', 715000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-tucson.jpg" alt="Hyundai Tucson">
+                            <h3>Hyundai Tucson</h3>
+                            <p class="price">989.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Tucson', 989000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-santafe.jpg" alt="Hyundai Santafe">
+                            <h3>Hyundai Santafe</h3>
+                            <p class="price">1.365.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Santafe', 1365000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-grand.jpg" alt="Hyundai Grand">
+                            <h3>Hyundai Grand</h3>
+                            <p class="price">435.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Grand', 435000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-palisade.jpg" alt="Hyundai Palisade">
+                            <h3>Hyundai Palisade</h3>
+                            <p class="price">1.589.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Palisade', 1589000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-stargazer.jpg" alt="Hyundai Stargazer">
+                            <h3>Hyundai Stargazer</h3>
+                            <p class="price">685.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Stargazer', 685000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-sonata.jpg" alt="Hyundai Sonata">
+                            <h3>Hyundai Sonata</h3>
+                            <p class="price">705.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Sonata', 705000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/hyundai-custin.jpg" alt="Hyundai Custin">
+                            <h3>Hyundai Custin</h3>
+                            <p class="price">890.000.000 VNĐ</p>
+                            <button onclick="addToCart('Hyundai Custin', 890000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+<!-- KIA Section -->
+            <div id="kia" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-kia.png" alt="KIA Logo" class="brand-logo">
+                        <h2>KIA</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/kia-morning.jpg" alt="KIA Morning">
+                            <h3>KIA Morning</h3>
+                            <p class="price">424.000.000 VNĐ</p>
+                            <button onclick="addToCart('Kia Morning', 424000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-soluto.jpg" alt="KIA Soluto">
+                            <h3>KIA Soluto</h3>
+                            <p class="price">482.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Soluto',482000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-sonet.jpg" alt="KIA Sonet">
+                            <h3>KIA Sonet</h3>
+                            <p class="price">624.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Sonet', 624000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-carnival.jpg" alt="KIA Carnival">
+                            <h3>KIA Carnival</h3>
+                            <p class="price">1.589.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Carnival', 1589000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-sorento.jpg" alt="KIA Sorento">
+                            <h3>KIA Sorento</h3>
+                            <p class="price">1.184.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Sorento', 1184000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-sportage.jpg" alt="KIA Sportage">
+                            <h3>KIA Sportage</h3>
+                            <p class="price">879.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Sportage', 879000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-carens.jpg" alt="KIA Carens">
+                            <h3>KIA Carens</h3>
+                            <p class="price">769.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Carens', 769000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-cerato.jpg" alt="KIA Cerato">
+                            <h3>KIA Cerato</h3>
+                            <p class="price">685.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA Cerato', 685000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-k3.jpg" alt="KIA K3">
+                            <h3>KIA K3</h3>
+                            <p class="price">819.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA K3', 819000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/kia-k5.jpg" alt="KIA K5">
+                            <h3>KIA K5</h3>
+                            <p class="price">1.069.000.000 VNĐ</p>
+                            <button onclick="addToCart('KIA K5', 1069000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+<!-- VINFAST Section -->
+            <div id="vinfast" class="brand-container">
+                <div class="brand-header">
+                    <div class="brand-title">
+                        <img src="assets/images/logo-vinfast.png" alt="Vinfast Logo" class="brand-logo">
+                        <h2>VINFAST</h2>
+                    </div>
+                    <a href="#" class="view-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="car-slider">
+                    <div class="car-container">
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vfe34.jpg" alt="Vinfast VF e34">
+                            <h3>Vinfast VF e34</h3>
+                            <p class="price">710.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF e34', 710000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf3.jpg" alt="Vinfast VF3">
+                            <h3>Vinfast VF3</h3>
+                            <p class="price">315.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF3', 315000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf5.jpg" alt="Vinfast VF5">
+                            <h3>Vinfast VF5</h3>
+                            <p class="price">529.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF5',529000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf6.jpg" alt="Vinfast VF6">
+                            <h3>Vinfast VF6</h3>
+                            <p class="price">689.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF6', 689000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf7.jpg" alt="Vinfast VF7">
+                            <h3>Vinfast VF7</h3>
+                            <p class="price">949.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF7', 949000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf8.jpg" alt="Vinfast VF8">
+                            <h3>Vinfast VF8</h3>
+                            <p class="price">1.215.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF8', 1215000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-vf9.jpg" alt="Vinfast VF9">
+                            <h3>Vinfast VF9</h3>
+                            <p class="price">1.680.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast VF9', 1680000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-luxa.jpg" alt="Vinfast Lux A">
+                            <h3>Vinfast Lux A</h3>
+                            <p class="price">781.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast Lux A', 781000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-president.jpg" alt="Vinfast President">
+                            <h3>Vinfast President</h3>
+                            <p class="price">4.600.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast President', 4600000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                        <div class="car-card">
+                            <img src="assets/images/vinfast-fadil.jpg" alt="Vinfast Fadil">
+                            <h3>Vinfast Fadil</h3>
+                            <p class="price">425.000.000 VNĐ</p>
+                            <button onclick="addToCart('Vinfast Fadil', 425000000)" class="buy-btn">Mua hàng</button>
+                            <a href="#" class="view-details">Chi tiết</a>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về NKDTrung AUTO</h3>
+                <p>Chuyên cung cấp các dòng xe hơi cao cấp với chất lượng và dịch vụ tốt nhất.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p>Email: tdinh2753@gmail.com</p>
+                <p>Điện thoại: 0799429767</p>
+                <p>Địa chỉ: 163/8, đường Thành Thái, quận 10, TP.HCM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NKDTrung AUTO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal chi tiết xe -->
+<div id="carModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img id="modalImg" src="" alt="Xe ô tô">
+    <h2 id="modalTitle"></h2>
+    <p id="modalPrice"></p>
+    <p id="modalDesc"></p>
+    <button id="addToCartBtn" class="btn">Thêm vào giỏ</button>
+    <button id="buyNowBtn" class="btn buy-now">Mua ngay</button>
+  </div>
+</div>
+
+    <!-- SVG filter for blob effect -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in2="goo" in="SourceGraphic" result="mix" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

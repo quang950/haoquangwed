@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .cart-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .cart-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+    td img {
+      width: 100px;
+      border-radius: 8px;
+    }
+    .remove-btn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .remove-btn:hover {
+      background: #a71d2a;
+    }
+    .total {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007bff;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .checkout-bar {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .checkout-btn {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.1s ease, box-shadow 0.2s ease;
+    }
+    .checkout-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h2>Giỏ hàng của bạn</h2>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Hình ảnh</th>
+          <th>Tên xe</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        <!-- sản phẩm sẽ load bằng JS -->
+      </tbody>
+    </table>
+    <div class="checkout-bar">
+      <a href="index.html" class="back-link">← Tiếp tục mua sắm</a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="total" id="cart-total">Tổng cộng: 0 VNĐ</div>
+        <button id="checkoutBtn" class="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
