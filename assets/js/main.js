@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Load sản phẩm từ admin trước
+    loadAdminProducts();
+    
     // Xử lý điều hướng mượt mà khi click vào menuhttp://127.0.0.1:3000/login.html
     document.querySelectorAll('.dropdown-content a').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -428,6 +431,63 @@ function setupCarDetailsModal() {
     closeBtn?.addEventListener('click', () => close());
     modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+}
+
+// Hàm load sản phẩm từ admin
+function loadAdminProducts() {
+    const adminProducts = JSON.parse(localStorage.getItem('products')) || [];
+    
+    if (adminProducts.length === 0) {
+        return; // Không có sản phẩm từ admin
+    }
+    
+    // Nhóm sản phẩm theo thương hiệu
+    const productsByBrand = {};
+    adminProducts.forEach(product => {
+        const brand = product.brand.toLowerCase();
+        if (!productsByBrand[brand]) {
+            productsByBrand[brand] = [];
+        }
+        productsByBrand[brand].push(product);
+    });
+    
+    // Thêm sản phẩm vào từng section thương hiệu
+    Object.keys(productsByBrand).forEach(brand => {
+        const brandSection = document.getElementById(brand);
+        if (brandSection) {
+            const carContainer = brandSection.querySelector('.car-container');
+            if (carContainer) {
+                productsByBrand[brand].forEach(product => {
+                    const carCard = createCarCard(product);
+                    carContainer.appendChild(carCard);
+                });
+            }
+        }
+    });
+    
+    // Khởi tạo lại pagination sau khi thêm sản phẩm
+    setTimeout(() => {
+        initBrandPagination();
+        setupCarDetailsModal();
+    }, 100);
+}
+
+// Hàm tạo card sản phẩm
+function createCarCard(product) {
+    const carCard = document.createElement('div');
+    carCard.className = 'car-card';
+    
+    const imageSrc = product.image || `assets/images/logo-${product.brand}.png`;
+    
+    carCard.innerHTML = `
+        <img src="${imageSrc}" alt="${product.name}" onerror="this.src='assets/images/logo-${product.brand}.png'">
+        <h3>${product.name}</h3>
+        <p class="price">${formatCurrency(product.price)}</p>
+        <button onclick="addToCart('${product.name}', ${product.price}, '${imageSrc}')" class="buy-btn">Mua hàng</button>
+        <a href="#" class="view-details">Chi tiết</a>
+    `;
+    
+    return carCard;
 }
 
 

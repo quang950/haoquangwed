@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - AutoCar</title>
-    <link rel="stylesheet" href="assets/css/admin-style.css">
+        <title>Đăng nhập Admin</title>
+    <link rel="stylesheet" href="assets/css/admin-style-new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="admin-login-container">
@@ -21,7 +23,42 @@
                 </div>
                 <button type="submit" class="login-btn">Đăng nhập</button>
             </form>
+            <div id="error-message" class="error-message" style="display: none;"></div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            // Thông tin đăng nhập admin
+            const adminCredentials = {
+                username: 'wed123123',
+                password: '123456'
+            };
+            
+            if (username === adminCredentials.username && password === adminCredentials.password) {
+                // Lưu trạng thái đăng nhập
+                localStorage.setItem('adminLoggedIn', 'true');
+                localStorage.setItem('adminUsername', username);
+                
+                // Chuyển hướng đến trang admin
+                window.location.href = 'admin-themsanpham.html';
+            } else {
+                // Hiển thị thông báo lỗi
+                errorMessage.textContent = 'Tên đăng nhập hoặc mật khẩu không đúng!';
+                errorMessage.style.display = 'block';
+                
+                // Ẩn thông báo lỗi sau 3 giây
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
 </body>
 </html>

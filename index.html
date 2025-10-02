@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NKD Trung Auto  - Những chiếc xe mơ ước</title>
+    <title>3 Boys Auto  - Những chiếc xe mơ ước</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">NKD Trung Auto</a>
+                <a href="index.html">3 Boys Auto</a>
             </div>
             <div class="nav-links">
                 <a href="index.html" class="active">Trang chủ</a>
@@ -40,8 +40,8 @@
                     <span class="cart-text">Xem giỏ hàng</span>
                     <span class="cart-count">0</span>
                 </a>
-                <div class="login-options">
-                    <a href="login.html" class="blob-btn login-btn">
+                <div class="login-options" id="loginOptions">
+                    <a href="login.html" class="blob-btn login-btn" id="customerLoginBtn">
                         <span class="blob-btn__inner">
                             <span class="blob-btn__blobs">
                                 <span class="blob-btn__blob"></span>
@@ -64,14 +64,28 @@
                         Đăng nhập Admin
                     </a>
                 </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <img src="" alt="Avatar" class="user-avatar" id="userAvatar">
+                    <span class="user-name" id="userName"></span>
+                    <a href="#" class="logout-link" onclick="logout()">Đăng xuất</a>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
+            <div class="slideshow-container">
+                <div class="slide" style="background-image: url('assets/images/images-index/112.jpg')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/221.jpg')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/222.jpg')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/hero-bg.jpg')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/mc.jpg')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/pngtree-white-porsche-911-driving-on-the-road-at-night-photo-image_15554838.png')"></div>
+                <div class="slide" style="background-image: url('assets/images/images-index/tong-hop-100-hinh-anh-sieu-xe-4k-cuc-chat-cho-dan-sanh-dieu-2063-19.jpg')"></div>
+            </div>
             <div class="hero-content">
-                <h1>NKD Trung Auto</h1>
+                <h1>3 Boys Auto</h1>
                 <p>Chiếc xe mơ ước của bạn ở đây</p>
             </div>
         </section>
@@ -908,5 +922,44 @@
     </svg>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Kiểm tra trạng thái đăng nhập và hiển thị thông tin user
+        function checkUserLoginStatus() {
+            const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+            const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
+            
+            const loginOptions = document.getElementById('loginOptions');
+            const userInfoDiv = document.getElementById('userInfo');
+            
+            if (isLoggedIn && userInfo.name) {
+                // Ẩn nút đăng nhập khách hàng, hiển thị thông tin user
+                document.getElementById('customerLoginBtn').style.display = 'none';
+                userInfoDiv.style.display = 'flex';
+                
+                // Cập nhật thông tin user
+                document.getElementById('userName').textContent = userInfo.name;
+                document.getElementById('userAvatar').src = userInfo.picture || 'https://via.placeholder.com/35';
+            } else {
+                // Hiển thị nút đăng nhập, ẩn thông tin user
+                document.getElementById('customerLoginBtn').style.display = 'inline-block';
+                userInfoDiv.style.display = 'none';
+            }
+        }
+        
+        // Function đăng xuất
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            localStorage.removeItem('userInfo');
+            checkUserLoginStatus();
+            
+            // Hiển thị thông báo
+            showToast('Đã đăng xuất thành công!');
+        }
+        
+        // Gọi function kiểm tra khi trang load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserLoginStatus();
+        });
+    </script>
 </body>
 </html>
