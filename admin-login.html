@@ -3,62 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - AutoCar</title>
-        <title>Đăng nhập Admin</title>
-    <link rel="stylesheet" href="assets/css/admin-style-new.css">
+    <title>Đăng nhập Admin - NKD Trung Auto</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/admin-login-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="admin-login-container">
-        <div class="login-box">
-            <h2>Admin Login</h2>
-            <form id="adminLoginForm">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="login-btn">Đăng nhập</button>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Đăng nhập Admin</h1>
+            
+            <form class="form" id="adminLoginForm">
+                <input type="text" placeholder="Username" id="username" required>
+                <input type="password" placeholder="Mật khẩu" id="password" required>
+                <button type="submit" id="admin-login-button">Đăng nhập</button>
             </form>
-            <div id="error-message" class="error-message" style="display: none;"></div>
+            
+            <div class="links">
+                <a href="login.html">Đăng nhập Khách hàng</a>
+                <a href="index.html">Về trang chủ</a>
+            </div>
         </div>
+        
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
-    
+
     <script>
-        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Hiệu ứng đăng nhập admin thành công
+        $("#admin-login-button").click(function(event){
+            event.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
             
-            // Thông tin đăng nhập admin
-            const adminCredentials = {
-                username: 'wed123123',
-                password: '123456'
-            };
-            
-            if (username === adminCredentials.username && password === adminCredentials.password) {
+            // Kiểm tra đăng nhập admin
+            if (username === 'wed123123' && password === '123456') {
+                $('form').fadeOut(500);
+                $('.wrapper').addClass('form-success');
+                
                 // Lưu trạng thái đăng nhập
                 localStorage.setItem('adminLoggedIn', 'true');
                 localStorage.setItem('adminUsername', username);
                 
-                // Chuyển hướng đến trang admin
-                window.location.href = 'admin-themsanpham.html';
-            } else {
-                // Hiển thị thông báo lỗi
-                errorMessage.textContent = 'Tên đăng nhập hoặc mật khẩu không đúng!';
-                errorMessage.style.display = 'block';
-                
-                // Ẩn thông báo lỗi sau 3 giây
                 setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 3000);
+                    window.location.href = 'admin-themsanpham.html';
+                }, 1000);
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng!\nUsername: wed123123\nPassword: 123456');
             }
         });
+
+        // Kiểm tra nếu đã đăng nhập admin
+        if (localStorage.getItem('adminLoggedIn') === 'true') {
+            window.location.href = 'admin-themsanpham.html';
+        }
     </script>
 </body>
 </html>

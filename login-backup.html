@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - NKD Trung Auto</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Đăng nhập Khách hàng</h1>
+            
+            <form class="form" id="loginForm">
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="password" placeholder="Mật khẩu" id="password" required>
+                <button type="submit" id="login-button">Đăng nhập</button>
+            </form>
+            
+            <div class="divider-text">hoặc</div>
+            
+            <button class="gmail-btn" onclick="showGmailLogin()">
+                <i class="fab fa-google"></i> Đăng nhập bằng Gmail
+            </button>
+            
+            <div class="links">
+                <a href="admin-login.html">Đăng nhập Admin</a>
+                <a href="index.html">Về trang chủ</a>
+            </div>
+        </div>
+        
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Gmail Login Modal -->
+    <div id="gmailModal" class="gmail-modal" style="display: none;">
+        <div class="gmail-modal-content">
+            <div class="gmail-modal-header">
+                <h3><i class="fab fa-google"></i> Đăng nhập bằng Gmail</h3>
+                <span class="gmail-close" onclick="closeGmailLogin()">&times;</span>
+            </div>
+            <div class="gmail-modal-body">
+                <form id="gmailForm">
+                    <input type="email" id="gmailEmail" placeholder="example@gmail.com" required>
+                    <input type="password" id="gmailPassword" placeholder="Nhập mật khẩu Gmail" required>
+                    <button type="submit" class="gmail-submit-btn">
+                        <i class="fab fa-google"></i> Đăng nhập
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hiệu ứng đăng nhập thành công
+        $("#login-button").click(function(event){
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                const userName = email.includes('@') ? email.split('@')[0] : email;
+                
+                $('form').fadeOut(500);
+                $('.wrapper').addClass('form-success');
+                
+                // Thay đổi text thành Welcome và ẩn tất cả element khác
+                setTimeout(() => {
+                    $('h1').text(`Welcome, ${userName}!`);
+                    // Ẩn tất cả bubbles và background effects
+                    $('.bg-bubbles').fadeOut(800);
+                    // Cải thiện hiển thị welcome text
+                    $('.container').css({
+                        'background': 'rgba(0,0,0,0.2)',
+                        'height': '100vh',
+                        'display': 'flex',
+                        'align-items': 'center',
+                        'justify-content': 'center'
+                    });
+                    $('h1').css({
+                        'font-size': '60px',
+                        'text-shadow': '0 0 20px rgba(255,255,255,0.8)',
+                        'animation': 'glow 1.5s ease-in-out infinite alternate'
+                    });
+                }, 500);
+                
+                // Chuyển đến trang chủ sau 3 giây
+                setTimeout(() => {
+                    const userInfo = {
+                        id: 'user_' + Date.now(),
+                        name: userName,
+                        email: email,
+                        picture: `https://ui-avatars.com/api/?name=${userName}&background=007bff&color=fff&size=50`,
+                        loginTime: new Date().toISOString(),
+                        loginType: 'normal'
+                    };
+                    
+                    localStorage.setItem('userLoggedIn', 'true');
+                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                    window.location.href = 'index.html';
+                }, 3000);
+            }
+        });
+
+        // Gmail login functions
+        function showGmailLogin() {
+            document.getElementById('gmailModal').style.display = 'flex';
+        }
+        
+        function closeGmailLogin() {
+            document.getElementById('gmailModal').style.display = 'none';
+        }
+        
+        document.getElementById('gmailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('gmailEmail').value;
+            const password = document.getElementById('gmailPassword').value;
+            
+            if (!email.endsWith('@gmail.com')) {
+                alert('Vui lòng nhập địa chỉ Gmail hợp lệ (phải có @gmail.com)');
+                return;
+            }
+            
+            if (email && password.length >= 6) {
+                // Đóng modal Gmail
+                closeGmailLogin();
+                
+                // Hiệu ứng đăng nhập thành công
+                $('form').fadeOut(500);
+                $('.wrapper').addClass('form-success');
+                
+                const userName = email.split('@')[0];
+                
+                // Thay đổi text thành Welcome và ẩn tất cả element khác
+                setTimeout(() => {
+                    $('h1').text(`Welcome, ${userName}!`);
+                    // Ẩn tất cả bubbles và background effects
+                    $('.bg-bubbles').fadeOut(800);
+                    // Cải thiện hiển thị welcome text
+                    $('.container').css({
+                        'background': 'rgba(0,0,0,0.2)',
+                        'height': '100vh',
+                        'display': 'flex',
+                        'align-items': 'center',
+                        'justify-content': 'center'
+                    });
+                    $('h1').css({
+                        'font-size': '60px',
+                        'text-shadow': '0 0 20px rgba(255,255,255,0.8)',
+                        'animation': 'glow 1.5s ease-in-out infinite alternate'
+                    });
+                }, 500);
+                
+                // Chuyển đến trang chủ sau 3 giây
+                setTimeout(() => {
+                    const userInfo = {
+                        id: 'gmail_' + Date.now(),
+                        name: userName,
+                        email: email,
+                        picture: `https://ui-avatars.com/api/?name=${userName}&background=db4437&color=fff&size=50`,
+                        loginTime: new Date().toISOString(),
+                        loginType: 'gmail'
+                    };
+                    
+                    localStorage.setItem('userLoggedIn', 'true');
+                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                    window.location.href = 'index.html';
+                }, 3000);
+            } else {
+                alert('Vui lòng nhập email Gmail và mật khẩu (ít nhất 6 ký tự)');
+            }
+        });
+
+        // Kiểm tra nếu đã đăng nhập
+        if (localStorage.getItem('userLoggedIn') === 'true') {
+            window.location.href = 'index.html';
+        }
+        
+        // Đóng modal khi click bên ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('gmailModal');
+            if (event.target == modal) {
+                closeGmailLogin();
+            }
+        }
+    </script>
+</body>
+</html>
